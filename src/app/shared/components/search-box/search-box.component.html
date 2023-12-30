@@ -1,0 +1,13 @@
+
+
+<div class="relative mb-3" data-te-input-wrapper-init>
+  <input type="text"
+    class="peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear peer-focus:text-primary motion-reduce:transition-none border border-blue-700"
+    id="exampleFormControlInput1"
+    [placeholder]="placeholder"
+    [value]="initialValue ?? ''"
+    #inputTerm
+    (keyup)="onKeyPress( inputTerm.value )"
+  />
+
+</div>

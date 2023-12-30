@@ -1,0 +1,21 @@
+<section class="w-full h-full flex flex-col gap-8 px-4">
+
+  <h2 class="text-center text-5xl font-semibold mb-5">By Capital</h2>
+
+  <div>
+    <!-- SearchBox -->
+    <shared-search-box
+      [initialValue]="initialValue"
+      (onDebounce)="searchByCapital( $event )"
+      placeholder="Search for Capital"
+    />
+  </div>
+  <div>
+    <shared-loading-spinner
+      *ngIf="isLoading"
+      textLoading="Capital"
+    />
+    <countries-table [countries]="countries" />
+  </div>
+</section>
+

@@ -1,0 +1,21 @@
+
+<section class="w-full h-full flex flex-col gap-8 px-4">
+
+  <h2 class="text-center text-5xl font-semibold mb-5">By Country</h2>
+
+  <div>
+    <!-- SearchBox -->
+    <shared-search-box
+    [initialValue]="initialValue"
+    (onDebounce)="searchByCountry( $event )"
+    placeholder="Search for Country" />
+  </div>
+
+  <div>
+    <shared-loading-spinner
+      *ngIf="isLoading"
+      textLoading="Country"
+    />
+    <countries-table [countries]="country" />
+  </div>
+</section>

@@ -1,0 +1,55 @@
+<section class="w-full h-auto">
+
+  <article
+  class="mb-12"
+    *ngIf="country; else loading"
+  >
+    <h2 class="text-4xl font-medium mb-10">Pais: <strong>{{ country.name.common }}</strong></h2>
+    <div class="grid grid-cols-2">
+
+      <div class="flex flex-col gap-5 w-full h-auto">
+        <h3 class="text-xl font-semibold">Flat</h3>
+        <img [src]="country.flags.svg" [alt]="country.name.common" class="object-cover w-10/12 h-auto">
+      </div>
+
+      <div class="">
+        <h3 class="text-xl font-semibold">Information</h3>
+        <ul>
+          <li class="w-full p-4 border-b">Population: <strong>{{ country.population | number }} </strong></li>
+          <li class="w-full p-4 border-b">Code: <strong>{{ country.cca3 }}</strong></li>
+          <li class="w-full p-4 border-b">Capital: <strong>{{ country.capital }}</strong></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- Traducciones -->
+
+  <div class="w-full h-auto" *ngIf="country">
+    <h4 class="text-xl  font-semibold">Traduccions</h4>
+    <div class="flex flex-wrap w-auto gap-2 my-4">
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['ara'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['rus'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['ces'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['jpn'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['kor'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['per'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['pol'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['srp'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['urd'].common }}</div>
+      <div class="bg-blue-600 W-full h-8 rounded text-white text-center py-1 px-2">{{ country.translations['zho'].common }}</div>
+    </div>
+  </div>
+
+  <ng-template  #loading>
+    <article class="flex flex-col gap-4 justify-center items-center w-full h-auto">
+      <div
+        class="inline-block h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] "
+        role="status">
+      </div>
+      <span class="text-blue-600 animate-pulse text-2xl">Loading</span>
+    </article>
+  </ng-template>
+
+
+</section>
